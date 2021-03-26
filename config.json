@@ -1,0 +1,35 @@
+{
+    "loggers": [
+      {
+          "path": "./lib/libFileLogger.so"
+        }
+    ],
+  "connection_wrapper": {
+      "path": "./lib/libSSL.so"
+  },
+  "parser": {
+    "path": "./lib/libParser.so",
+    "conf": {
+    }
+  },
+  "handlers": [
+      {
+          "path": "lib/libPHP.so",
+          "conf": {
+            "path": "/usr/bin/php-cgi"
+          }
+      },
+    {
+        "path": "lib/libfile-serving.so",
+        "conf": {
+            "directory": "../public"
+          }
+    },
+    {
+        "path": "lib/liberror-pages.so",
+        "conf": {
+          "directory": "../error-pages"
+        }
+    }
+  ]
+}

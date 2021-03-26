@@ -1,0 +1,18 @@
+[requires]
+zlib/1.2.11@conan/stable
+freetype/2.9.0@bincrafters/stable
+bzip2/1.0.8@conan/stable
+boost/1.71.0@conan/stable
+OpenSSL/1.1.1c@conan/stable
+nlohmann_json/3.9.1
+
+[options]
+boost:shared=True
+OpenSSL:shared=True
+
+[generators]
+cmake
+
+[imports]
+bin, *.dll -> ./bin # Copies all dll files from packages bin folder to my "bin" folder
+lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder to my "bin" folder
